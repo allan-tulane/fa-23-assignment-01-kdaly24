@@ -13,34 +13,34 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
 .  
-.  
+.  No, because as $2^{n+1}$ approaches infinity, it is not within the set of $2^n$. Taking the limit gets you 2 which is < 0, thus giving a non-asymptotically dominant answer. $2^{n+1}$ will always be twice as much as $2^n$.
 .  
 .  
 . 
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
 .  
 .  
-.  
+.  No, because $2^{2^n}$ grows exponentially bigger than $2^n$
 .  
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
 .  
-.  
+.  No, as $n^{1.01}$ grows faster.
 .  
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
 .  
-.  
+.  Yes 
 .  
 .  
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
 .  
-.  
+.  No. $\sqrt{n}$ grows faster than $(\mathrm{log} n)^3$
 .  
 .  
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
-.  
+.  Yes. 
 
 
 2. **SPARC to Python** (12 pts)
@@ -63,7 +63,7 @@ $$
   - 2b. (6 pts) What does this function do, in your own words?  
 
 .  
-.  
+.  This returns the "xth" fibonacci number, where x is the key input by the function. It recursively returns the fibonacci numbers of x-1 and x-2, until they reach base cases, at which point they return the totality, reaching the fibonacci number at x.
 .  
 .  
 .  
@@ -92,7 +92,7 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
 
-.  
+.  The work for this implementation is $W(n)$ = $O(n)$ and Span is $S(n)$ = $O(n)$.
 .  
 .  
 .  
@@ -108,11 +108,10 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
 .  
 .  
+.  The work is $O(n)$, and span is $O(logn)$
 .  
-.  
-.  
-.  
-.  
+.  The work is $O(nlogn)$ 
+.  The Span is $O(logn)$
 .  
 .  
 .  
@@ -122,8 +121,8 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
 
 .  
-.  
-.  
+.  The work is $O(n)$ 
+.  The Span is $O(logn)$
 .  
 .  
 .  
